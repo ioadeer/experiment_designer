@@ -36,7 +36,8 @@ def main():
     description_str = "In this experment subjects where exposed to 5 visual " \
                       " stimuli, consisting on 360 photos, and 3 audio stimuli. " \
                       " Each audio stimulus was repeated 5 times. " \
-                      " Total number of trials 5x3x5 = 75." \
+                      " 3 test trials added " \
+                      " Total number of trials 5x3x5 + 3 = 78." \
                       " First all combination of stimuli where created using " \
                       " np.tile and np.meshgrid methods. " \
                       " Stimulus were randomized using np.random.shuffle method. " 
@@ -60,12 +61,22 @@ def main():
     for subject in range(subject_n):
         # Random order
         np.random.shuffle(combination)
+        # add
+        # agregando 3 test trials
+        # audio y visual no congruente
+        # audio sala 3 2 1
+        a = np.arange(3,0,-1)
+        # sala 1 3 5
+        b = np.arange(1,6,2)
+        t_trial = np.column_stack((a,b))
+        df_test_trial = pd.DataFrame(t_trial, columns= ['AudioStimulus','VisualStimulus'])
         df_stimuli = pd.DataFrame(combination, columns= ['AudioStimulus','VisualStimulus'])
+        df_stimuli = pd.concat([df_test_trial, df_stimuli], axis = 0, ignore_index= True)
         # subject number
         df = pd.DataFrame()
         df['Subject'] = np.zeros(len(df_stimuli)) + subject + 1
         df['Subject'] = df['Subject'].astype(int)
-        df['TrialNumber'] = np.arange(1,audio_stimulus_n*audio_stimulus_repetitions*visual_stimulus_n+1)
+        df['TrialNumber'] = np.arange(1,len(df_stimuli)+1)
         df = pd.concat([df,df_stimuli], axis=1)
         # put first subject col
         df['Response'] = 'AddResponse' 
