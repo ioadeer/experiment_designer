@@ -65,9 +65,9 @@ def main():
         # agregando 3 test trials
         # audio y visual no congruente
         # audio sala 3 2 1
-        a = np.arange(3,0,-1)
+        a = np.arange(2,-1,-1)
         # sala 1 3 5
-        b = np.arange(1,6,2)
+        b = np.arange(0,6,2)
         t_trial = np.column_stack((a,b))
         df_test_trial = pd.DataFrame(t_trial, columns= ['AudioStimulus','VisualStimulus'])
         df_stimuli = pd.DataFrame(combination, columns= ['AudioStimulus','VisualStimulus'])

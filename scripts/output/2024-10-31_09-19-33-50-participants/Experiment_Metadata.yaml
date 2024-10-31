@@ -1,0 +1,8 @@
+Date of creation: 2024-10-31_09-19-33
+Experiment description: 'In this experment subjects where exposed to 5 visual  stimuli,
+  consisting on 360 photos, and 3 audio stimuli.  Each audio stimulus was repeated
+  5 times.  3 test trials added  Total number of trials 5x3x5 + 3 = 78. First all
+  combination of stimuli where created using  np.tile and np.meshgrid methods.  Stimulus
+  were randomized using np.random.shuffle method. '
+Subjects N: '50'
+Trail n: '75'
