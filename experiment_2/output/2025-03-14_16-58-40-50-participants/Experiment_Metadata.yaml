@@ -1,0 +1,7 @@
+Date of creation: 2025-03-14_16-58-40
+Experiment description: Second experiment. In this experiment we will comparedifferent
+  visual rooms for different percieved reverberantion.we will use 5 360 images encompasing
+  combinationsAB AC AD AE BC BD BE CD CE DEBA BC BD BE AC AD AE CD CE DEEach series
+  is repeated 3 times and randomized usingnp.random.shuffle from numpy
+Subjects N: '50'
+Trail n: '60'
